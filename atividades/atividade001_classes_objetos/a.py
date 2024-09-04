@@ -8,7 +8,7 @@
 import os
 
 
-# Criação da classe:
+# Definição da classe:
 class Calculadora:
     def __init__(self, a, b, c):
         self.a = a

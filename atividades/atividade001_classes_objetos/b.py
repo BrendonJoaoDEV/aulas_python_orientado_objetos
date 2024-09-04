@@ -8,7 +8,7 @@
 import os
 
 
-# Criação da classe:
+# Definição da classe:
 class Usuario:
     def __init__(self, data_nascimento):
         self.data_nascimento = data_nascimento
@@ -25,6 +25,11 @@ class Usuario:
         return idade
 
 
+# Declaração de variáveis:
+data_nascimento = ''
+idade = 0
+
+# LImpeza do terminal:
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print('.'*79)
