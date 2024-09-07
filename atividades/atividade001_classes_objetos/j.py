@@ -4,9 +4,11 @@
 # Autor: Brendon João Campos Neves.
 # J) Faça um programa com entrada de dados para calcular o perímetro de um retângulo.
 
+# Importação das bibliotecas:
 import os
 
 
+# Definição da classe:
 class Calculadora:
     def __init__(self, medida_comprimento, medida_largura):
         self.comprimento = medida_comprimento
@@ -22,12 +24,14 @@ comprimento = 0.0
 largura = 0.0
 perimetro = 0.0
 
+# Limpeza do terminal:
 os.system('cls' if os.name == 'nt' else 'clear')
 
 print('.'*79)
 print('Calcular perímetro de um retângulo')
 print('.'*79)
 
+# Entrada:
 print('-'*79)
 while True:
     comprimento = input('Digite o comprimento da base do seu retângulo: ')
@@ -41,9 +45,11 @@ while True:
         print('Comprimento inválida!')
 print('-'*79)
 
+# Processamento:
 calculador = Calculadora(comprimento, largura)
 perimetro = calculador.calcular_perimetro()
 
+# Saída:
 print('='*79)
 print(f'O perímetro do retângulo é {perimetro}')
 print('='*79)

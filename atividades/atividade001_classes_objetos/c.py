@@ -2,7 +2,7 @@
 # Turma: 0152.
 # Data: 02/09/2024.
 # Autor: Brendon João Campos Neves.
-# Faça um programa que peça 4 notas, após a entrada de dados calcular a média das notas digitadas.
+# C) Faça um programa que peça 4 notas, após a entrada de dados calcular a média das notas digitadas.
 
 # Importação de bibliotecas:
 import os

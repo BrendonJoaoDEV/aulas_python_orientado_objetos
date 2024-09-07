@@ -2,7 +2,7 @@
 # Turma: 0152.
 # Data: 02/09/2024.
 # Autor: Brendon João Campos Neves.
-# Faça um programa que peça o ano do seu nascimento e calcule a sua idade.
+# B) Faça um programa que peça o ano do seu nascimento e calcule a sua idade.
 
 # Importação de bibliotecas:
 import os
