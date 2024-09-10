@@ -10,18 +10,25 @@ import os
 
 # Definição das classes:
 class Intervalos:
-    def __init__(self, inicio, final, passo=1):
+    def __init__(self, inicio, final):
         self.inicio = int(inicio)
-        self.final = int(final)
-        self.passo = int(passo)
-
+        self.final = int(final) 
+    
+    def imprimir_intervalo(self, inicio, final):
+        # Método que será sobrecarregado.
+        pass
 
 class Imprimir(Intervalos):
+    def __init__(self, inicio, final):
+        self.inicio = int(inicio)
+        self.final = int(final)
+
     def imprimir_intervalo(self):
-        for i in range(self.inicio, self.final, self.passo):
+        for i in range(self.inicio, self.final):
             print(i, end=', ')
             if i in range(self.inicio, self.final, 20) and i > 1:
                 print()
+
 
 # Declarações de variáveis:
 inicio = 0
@@ -45,17 +52,7 @@ while True:
     if inicio.isnumeric():
         final = input('Digite o final do seu intervalo: ')
         if final.isnumeric():
-            passo = input('Digite o passo do seu intervalo: ')
-            if passo == '':
-                passo = 1
-                break
-            elif passo == '0':
-                passo = 1
-                break
-            elif passo.isnumeric():
-                break
-            else:
-                print('Passo inválido! Digite apenas números inteiros!')
+            break
         else:
             print('Final inválido! Digite apenas números inteiros!')
     else:
@@ -63,8 +60,8 @@ while True:
 print('-'*79)
 
 # Instânciação dos objetos (Processamento de dados):
-intervalo = Intervalos(inicio=inicio, final=int(final) + 1, passo=passo)
-impressor = Imprimir(intervalo.inicio, intervalo.final, intervalo.passo)
+intervalo = Intervalos(inicio=inicio, final=int(final) + 1)
+impressor = Imprimir(intervalo.inicio, intervalo.final)
 
 # Saída de dados:
 print('.'*79)

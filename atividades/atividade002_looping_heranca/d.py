@@ -10,16 +10,23 @@ import os
 
 # Definição das classes:
 class Intervalos:
-    def __init__(self, inicio, final, passo=1):
+    def __init__(self, inicio, final):
         self.inicio = int(inicio)
         self.final = int(final)
-        self.passo = int(passo)
 
+    def imprimir_intervalo(self, inicio, final):
+        # Método que será sobrecarregado.
+        pass
 
 class Imprimir(Intervalos):
+    def __init__(self, inicio, final):
+        self.inicio = int(inicio)
+        self.final = int(final)
+
     def imprimir_intervalo(self):
-        for i in range(self.inicio, self.final, self.passo):
-            print(i, end=', ')
+        for i in range(self.inicio, self.final + 1):
+            if i % 2 == 0:
+                print(i, end=', ')
             if i in range(self.inicio, self.final, 20) and i > 1:
                 print()
 
@@ -32,8 +39,8 @@ impressor = object
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # Intânciação dos objetos:
-intervalo = Intervalos(inicio=0, final=100 + 1, passo=2)
-impressor = Imprimir(intervalo.inicio, intervalo.final, intervalo.passo)
+intervalo = Intervalos(0, 100)
+impressor = Imprimir(intervalo.inicio, intervalo.final)
 
 # Imprimindo título:
 print('.'*79)

@@ -10,17 +10,23 @@ import os
 
 # Definição das classes:
 class Intervalos:
-    def __init__(self, inicio, final, passo=1):
+    def __init__(self, inicio, final):
         self.inicio = int(inicio)
         self.final = int(final)
-        self.passo = int(passo)
+    
+    def somar_pares_no_intervalo(self, inicio, final):
+        pass
 
 
 class OperacoesIntervalos(Intervalos):
+    def __init__(self, inicio, final):
+        self.inicio = int(inicio)
+        self.final = int(final)
+        
     def somar_pares_no_intervalo(self):
         numero_pares = 0
         soma_pares = 0
-        for i in range(self.inicio, self.final, self.passo):
+        for i in range(self.inicio, self.final + 1):
             if i % 2 == 0:
                 numero_pares += 1
                 soma_pares += i
@@ -37,15 +43,15 @@ soma_pares = 0
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # Instânciação dos objetos:
-intervalo = Intervalos(0, 100 + 1)
-operario = OperacoesIntervalos(intervalo.inicio, intervalo.final, intervalo.passo)
+intervalo = OperacoesIntervalos(0, 100)
+# operario = OperacoesIntervalos(intervalo.inicio, intervalo.final)
 # Imprimindo título:
 print('.'*79)
 print('Número de pares e soma de todos os pares no intervalo de 0 a 100')
 print('.'*79)
 
 # Processamento de dados:
-numero_pares, soma_pares = operario.somar_pares_no_intervalo()
+numero_pares, soma_pares = intervalo.somar_pares_no_intervalo()
 
 # Saída de daddos:
 print('='*79)
