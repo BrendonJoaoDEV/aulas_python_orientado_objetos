@@ -12,19 +12,19 @@ import os
 class Intervalos:
     def __init__(self, inicio, final):
         self.inicio = int(inicio)
-        self.final = int(final) 
-    
+        self.final = int(final)
+
     def imprimir_intervalo(self, inicio, final):
         # Método que será sobrecarregado.
         pass
 
+
 class Imprimir(Intervalos):
     def __init__(self, inicio, final):
-        self.inicio = int(inicio)
-        self.final = int(final)
+        super().__init__(inicio, final)
 
     def imprimir_intervalo(self):
-        for i in range(self.inicio, self.final):
+        for i in range(self.inicio, self.final + 1):
             print(i, end=', ')
             if i in range(self.inicio, self.final, 20) and i > 1:
                 print()
@@ -35,7 +35,6 @@ inicio = 0
 final = 0
 passo = 0
 intervalo = object
-Impressor = object
 
 # Limpeza do terminal:
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -60,15 +59,14 @@ while True:
 print('-'*79)
 
 # Instânciação dos objetos (Processamento de dados):
-intervalo = Intervalos(inicio=inicio, final=int(final) + 1)
-impressor = Imprimir(intervalo.inicio, intervalo.final)
+intervalo = Imprimir(inicio=inicio, final=int(final))
 
 # Saída de dados:
 print('.'*79)
-print(f'Intervalo de {intervalo.inicio} até {intervalo.final - 1}')
+print(f'Intervalo de {intervalo.inicio} até {intervalo.final}')
 print('.'*79)
 
-impressor.imprimir_intervalo()
+intervalo.imprimir_intervalo()
 print()
 
 print('.'*79)
