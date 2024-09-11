@@ -20,11 +20,10 @@ class Intervalos:
 
 class Imprimir(Intervalos):
     def __init__(self, inicio, final):
-        self.inicio = int(inicio)
-        self.final = int(final)
+        super().__init__(inicio, final)
 
     def imprimir_intervalo(self):
-        for i in range(self.inicio, self.final, -1):
+        for i in range(self.inicio, self.final - 1, -1):
             print(i, end=', ')
             if i in range(self.inicio, self.final, 20) and i > 1:
                 print()
@@ -32,14 +31,12 @@ class Imprimir(Intervalos):
 
 # Declarações de variáveis:
 intervalo = object
-impressor = object
 
 # Limpeza do terminal:
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # Instânciação dos objetos:
-intervalo = Intervalos(inicio=10, final=0)
-impressor = Imprimir(intervalo.inicio, intervalo.final)
+intervalo = Imprimir(inicio=10, final=0)
 
 # Imprimindo título:
 print('.'*79)
@@ -48,7 +45,7 @@ print(
 print('.'*79)
 
 # Imprimindo o intervalo:
-impressor.imprimir_intervalo()
+intervalo.imprimir_intervalo()
 print()
 
 print('.'*79)
