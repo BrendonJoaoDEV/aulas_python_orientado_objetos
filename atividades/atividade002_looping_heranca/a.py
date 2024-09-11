@@ -13,22 +13,23 @@ import os
 class Intervalos:
     def __init__(self, inicio, final):
         self.inicio = int(inicio)
-        self.final = int(final) 
-    
+        self.final = int(final)
+
     def imprimir_intervalo(self, inicio, final):
         # Método que será sobrecarregado.
         pass
 
+
 class Imprimir(Intervalos):
     def __init__(self, inicio, final):
-        self.inicio = int(inicio)
-        self.final = int(final)
+        super().__init__(inicio, final)
 
     def imprimir_intervalo(self):
         for i in range(self.inicio, self.final):
             print(i, end=', ')
             if i in range(self.inicio, self.final, 20) and i > 1:
                 print()
+
 
 # Declarações de variáveis:
 intervalo = object
