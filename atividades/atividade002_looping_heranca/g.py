@@ -1,22 +1,28 @@
-# curso de desenvolvimento de sistemas.
-# turma: 0152.
-# data: 09/09/2024.
-# autor: brendon joão campos neves.
-# g) faça um programa que calcule os números primos em um intervalo pré-determinado pelo usuário.
+# Curso de Desenvolvimento de Sistemas.
+# Turma: 0152.
+# Data: 06/09/2024.
+# Autor: Brendon João Campos Neves.
+# G) Faça um programa que calcule os números primos em um intervalo pré-determinado pelo usuário.
 
 # importação da biblioteca:
 import os
 
 
 # definição da classe:
-class intervalos:
-    def __init__(self, inicio, final, passo=1):
+class Intervalos:
+    def __init__(self, inicio, final):
         self.inicio = int(inicio)
         self.final = int(final)
-        self.passo = int(passo)
+
+    def verificar_primo(self, inicio, final):
+        # Método que será sobrecarregado
+        pass
 
 
-class operacoesintervalos(intervalos):
+class OperacoesIntervalos(Intervalos):
+    def __init__(self, inicio, final):
+        super().__init__(inicio, final)
+
     def verificar_primo(self):
         for i in range(self.inicio, self.final):
             if i > 1:
@@ -34,8 +40,34 @@ inicio = 0
 final = 0
 passo = 0
 intervalo = object
-operario = object
 
 print('.'*79)
 print('Encontrar números primos')
+print('.'*79)
+
+# Entrada:
+print('-'*79)
+while True:
+    inicio = input('Digite o início do seu intervalo: ')
+    if inicio.isnumeric():
+        final = input('Digite o final do seu intervalo: ')
+        if final.isnumeric():
+            break
+        else:
+            print('Final inválido! Digite apenas números inteiros!')
+    else:
+        print('Início inválido! Digite apenas números inteiros!')
+print('-'*79)
+
+# Processamento:
+intervalo = OperacoesIntervalos(inicio, final)
+
+# Saída:
+print('='*79)
+intervalo.verificar_primo()
+print()
+print('='*79)
+
+print('.'*79)
+print('Fim do programa! Obrigado ;)')
 print('.'*79)
