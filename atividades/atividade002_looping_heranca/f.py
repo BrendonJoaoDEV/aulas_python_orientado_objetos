@@ -18,25 +18,25 @@ class Intervalos:
 
 class OperacoesIntervalos(Intervalos):
     def verificar_primo(self):
-        for i in range(self.inicio, self.final):
+        for i in range(self.inicio, self.final + 1):
             if i > 1:
                 for j in range(2, i):
                     if i % j == 0:
                         break
                 else:
                     print(i, end=', ')
+                    if i in range(self.inicio, self.final + 1, 73):
+                        print()
 
 
 # Declarações de variáveis:
 intervalo = object
-operario = object
 
 # Limpeza do terminal:
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # Intânciação do objeto:
-intervalo = Intervalos(0, 100 + 1)
-operario = OperacoesIntervalos(intervalo.inicio, intervalo.final, intervalo.passo)
+intervalo = OperacoesIntervalos(0, 100 + 1)
 
 # Imprimindo título:
 print('.'*79)
@@ -45,7 +45,7 @@ print('.'*79)
 
 # Imprimindo os primos:
 print('='*79)
-operario.verificar_primo()
+intervalo.verificar_primo()
 print()
 print('='*79)
 
