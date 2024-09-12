@@ -1,6 +1,6 @@
 # Curso de Desenvolvimento de Sistemas.
 # Turma: 0152.
-# Data: 06/09/2024.
+# Data: 12/09/2024.
 # Autor: Brendon João Campos Neves.
 # H) Faça um programa que imprima os valores no intervalo definidos pelo usuário.
 # Defina 3 números que deverão ser ignorados, ou seja, que não serão impressos na tela.

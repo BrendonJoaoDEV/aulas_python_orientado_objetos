@@ -1,6 +1,6 @@
 # Curso de Desenvolvimento de Sistemas.
 # Turma: 0152.
-# Data: 06/09/2024.
+# Data: 11/09/2024.
 # Autor: Brendon João Campos Neves.
 # G) Faça um programa que calcule os números primos em um intervalo pré-determinado pelo usuário.
 
