@@ -18,6 +18,7 @@ class Intervalos:
         # Método que será sobrecarregado.
         pass
 
+
 class Imprimir(Intervalos):
     def __init__(self, inicio, final):
         super().__init__(inicio, final)

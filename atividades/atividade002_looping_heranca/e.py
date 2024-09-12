@@ -13,16 +13,15 @@ class Intervalos:
     def __init__(self, inicio, final):
         self.inicio = int(inicio)
         self.final = int(final)
-    
+
     def somar_pares_no_intervalo(self, inicio, final):
         pass
 
 
 class OperacoesIntervalos(Intervalos):
     def __init__(self, inicio, final):
-        self.inicio = int(inicio)
-        self.final = int(final)
-        
+        super().__init__(inicio, final)
+
     def somar_pares_no_intervalo(self):
         numero_pares = 0
         soma_pares = 0
@@ -35,7 +34,6 @@ class OperacoesIntervalos(Intervalos):
 
 # Declarações de variáveis:
 intervalo = object
-operario = object
 numero_pares = 0
 soma_pares = 0
 
