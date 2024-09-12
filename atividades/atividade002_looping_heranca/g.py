@@ -41,6 +41,9 @@ final = 0
 passo = 0
 intervalo = object
 
+# Limpeza do terminal:
+os.system('cls' if os.name == 'nt' else 'clear')
+
 print('.'*79)
 print('Encontrar números primos')
 print('.'*79)

@@ -33,7 +33,6 @@ class Imprimir(Intervalos):
 # Declarações de variáveis:
 inicio = 0
 final = 0
-passo = 0
 intervalo = object
 
 # Limpeza do terminal:
@@ -66,8 +65,10 @@ print('.'*79)
 print(f'Intervalo de {intervalo.inicio} até {intervalo.final}')
 print('.'*79)
 
+print('='*79)
 intervalo.imprimir_intervalo()
 print()
+print('='*79)
 
 print('.'*79)
 print('Fim do programa! Obrigado ;)')
