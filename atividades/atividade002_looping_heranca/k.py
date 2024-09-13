@@ -2,7 +2,7 @@
 # Turma: 0152.
 # Data: 06/09/2024.
 # Autor: Brendon João Campos Neves.
-# K) Crie um programa que pede que o usuário digite um nome ou uma frase, 
+# K) Crie um programa que pede que o usuário digite um nome ou uma frase,
 # verifique se esse conteúdo digitado é um palíndromo ou não, exibindo em tela esse resultado.
 
 # Importação da biblioteca:
@@ -13,7 +13,7 @@ import os
 class Frase:
     def __init__(self, cadeia_caracteres):
         self.frase = cadeia_caracteres
-    
+
     def verificar_palindormo(self, cadeia_caracteres):
         # Método que será sobrecarregado.
         pass
@@ -22,7 +22,7 @@ class Frase:
 class Palindromo(Frase):
     def __init__(self, cadeia_caracteres):
         super().__init__(cadeia_caracteres)
-    
+
     def verificar_palindormo(self):
         frase = str(self.frase).replace(' ', '').lower()
         frase_invertida = frase[::-1]
@@ -41,16 +41,19 @@ print('.'*79)
 
 # Entrada:
 print('-'*79)
-frase = str(input('Digite sua palavra ou frase: ')).strip()
-print('-'*79)
+while True:
+    frase = str(input('Digite sua palavra ou frase (0 - Sair): ')).strip()
+    if frase == '0':
+        break
+    else:
+        # Processamento:
+        escritor = Palindromo(frase)
 
-# Processamento:
-escritor = Palindromo(frase)
+        # Saída:
+        print('='*79)
+        escritor.verificar_palindormo()
+        print('='*79)
 
-# Saída:
-print('='*79)
-escritor.verificar_palindormo()
-print('='*79)
 
 print('.'*79)
 print('Fim do programa! Obrigado ;)')
